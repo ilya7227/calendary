@@ -1,0 +1,110 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 540px;
+  width: 1000px;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #211d43;
+}
+
+.today {
+  background-color: #2d65e7;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  border-radius: 10% 0 0 10%;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+.alldays {
+  background-color: #384347;
+  width: 500px;
+  height: 100%;
+  display: flex;
+  border-radius: 0 10% 10% 0;
+  flex-direction: column;
+}
+
+.day {
+  font-size:20px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.number {
+  font-size: 400px;
+  margin-top: 0;
+  color: white;
+  font-weight: 100;
+  padding-top: 0;
+  line-height: 1;
+}
+
+.previous, .next {
+  cursor: pointer;
+  padding: 10px 10px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  width: 90px;
+  font-size: 15px;
+}
+
+.scroll {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.choosenMonth {
+  font-size: 30px;
+  color: white;
+  margin-top: 5px;
+  
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.dayOfWeek, .day {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.dayOfWeek {
+  font-weight: bold;
+  color: white;
+}
+
+.previous-month {
+  color: rgba(128, 128, 128, 0.5); /* Серый цвет с прозрачностью */
+}
+
+.day.selected {
+  background-color: purple;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.next {
+  border-radius: 5px 20% 5px 5px;
+}

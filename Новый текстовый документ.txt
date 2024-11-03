@@ -1,0 +1,16 @@
+const [choosenMonth, setChoosenMonth] = useState(currentDate.toLocaleString('ru', { month: 'long', year: 'numeric' }));: Создает состояние choosenMonth, которое хранит строку с названием текущего месяца и года в формате, подходящем для русского языка. Эт с помощью toLocaleString
+
+const [selectedDay, setSelectedDay] = useState(currentDate.getDate());: Создает состояние selectedDay, которое образуется текущим числом месяца (полученным с помощью getDate()).
+
+const handlePreviousMonth = () => {: Определяет функцию handlePreviousMonth, которая будет вызываться при нажатии на кнопку "Предыдущий" для переключения на предыдущий месяц.
+
+const getDaysInMonth = (month, year) => {: Определяет функцию getDaysInMonth, которая возвращает количество дней в месяце.
+
+const getFirstDayOfWeek = (month, year) => {: Определяет функцию getFirstDayOfWeek, которая возвращает день недели для первой даты месяца.
+
+return (new Date(year, month, 1).getDay() + 6) % 7;: Возвращает день недели для первой даты месяца, сдвинутый на 1 день назад. getDay() возвращает день недели (0 — воскресенье, 1 — понедельник, ..., 6 — суббота). Сдвиг на 1 день назад достигается с помощью выражения (getDay() + 6) % 7.
+
+{Array(getFirstDayOfWeek(currentDate.getMonth(), currentDate.getFullYear())).fill(null).map((_, index) => (<div key={empty-${index}} className="empty"></div>))}: Создает массив пустых элементов div с классом empty, необходимых для корректного отображения календаря. 
+
+Array(...).fill(null) создает массив длиной, равной количеству пустых дней, и заполняет его null.
+Затем с помощью map мы проходимся по этому массиву и для каждого элемента создаем div с классом empty. Эти div представляют собой пустые ячейки в календаре, чтобы правильно выровнять дни по неделям.
